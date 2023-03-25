@@ -1,0 +1,11 @@
+{
+  "TT_IoT": {
+    "BULB_01": "ON",
+    "BULB_02": "OFF",
+    "BULB_03": "ON",
+    "d": 64,
+    "gas": 14,
+    "light": 700,
+    "nhietdo": 30
+  }
+}

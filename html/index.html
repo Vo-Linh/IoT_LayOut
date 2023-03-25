@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Dashboard IoT</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/node_modules/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+    <!-- This page CSS -->
+    <!-- chartist CSS -->
+    <link href="../assets/node_modules/morrisjs/morris.css" rel="stylesheet">
+    <!--c3 CSS -->
+    <link href="../assets/node_modules/c3-master/c3.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/pages/dashboard1.css" rel="stylesheet">
+
+    <link href="css/colors/default.css" id="theme" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Linh Vo</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon --><b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark"
+                                href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown u-pro">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#"
+                                id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"><img src="../assets/images/users/linhvo.jpeg" alt="user"
+                                    class="" /> <span class="hidden-md-down">Linh Vo &nbsp;</span> </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li> <a class="waves-effect waves-dark" href="index.html" aria-expanded="false"><i
+                                    class="fal fa-couch"></i><span class="hide-menu">Living</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="dining.html" aria-expanded="false"><i
+                                    class="fal fa-utensils-alt"></i><span class="hide-menu">Dining</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="bed.html" aria-expanded="false"><i
+                                    class="far fa-bed"></i><span class="hide-menu">bed</span></a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Dashboard</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Linving</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Power Chart and browser state-->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex no-block">
+                                    <div>
+                                        <h5 class="card-title mb-0">Power Chart</h5>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <ul class="list-inline text-center font-12">
+                                            <li><i class="fa fa-circle text-success"></i> Light</li>
+                                            <li><i class="fa fa-circle text-info"></i> Air Conditioner</li>
+                                            <li><i class="fa fa-circle text-primary"></i> Tivi</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="" id="power-chart" style="height: 355px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex mb-4 no-block">
+                                    <h5 class="card-title mb-0 align-self-center">Consume Energy</h5>
+                                </div>
+                                <div id="visitor" style="height:260px; width:100%;"></div>
+                                <ul class="list-inline mt-4 text-center font-12">
+                                    <li><i class="fa fa-circle text-purple"></i> Fan</li>
+                                    <li><i class="fa fa-circle text-success"></i> Air Conditioner</li>
+                                    <li><i class="fa fa-circle text-info"></i> Tivi</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Power Chart -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Manager Device -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-8 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h5 class="card-title">Device Manager</h5>
+                                    </div>
+                                </div>
+                                <div class="table-responsive mt-3 no-wrap">
+                                    <table class="table vm no-th-brd pro-of-month">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Device</th>
+                                                <th>Name</th>
+                                                <th>State</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i
+                                                            class="fa fa-lightbulb-o"></i></span></td>
+                                                <td>
+                                                    <h6>Light</h6>
+                                                </td>
+                                                <td>Linh Vo</td>
+                                                <td>
+                                                    <div class='toggle-switch'>
+                                                        <label>
+                                                            <input type='checkbox' id='living_light'
+                                                                onclick="validateTerms()">
+                                                            <span class='slider'></span>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="active">
+                                                <td><span class="round"><i class="fa fa-fan"></i></span></td>
+                                                <td>
+                                                    <h6>Fan</h6>
+                                                </td>
+                                                <td>Minh Nhat</td>
+                                                <td>
+                                                    <div class='toggle-switch'>
+                                                        <label>
+                                                            <input type='checkbox' id='living_fan'
+                                                                onclick="validateTerms02()">
+                                                            <span class='slider'></span>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="round"><i class="fa fa-lightbulb"></i></span></td>
+                                                <td>
+                                                    <h6>Wall-lamp </h6>
+                                                </td>
+                                                <td>Minh Nhat</td>
+                                                <td>
+                                                    <div class='toggle-switch'>
+                                                        <label>
+                                                            <input type='checkbox' id='living_lamp'
+                                                                onclick="validateTerms03()">
+                                                            <span class='slider'></span>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="up-img" style="background-image:url(../assets/images/big/living_room.jpg)">
+                            </div>
+                            <div class="card-body">
+                                <h5 class=" card-title">Information in Living room</h5>
+
+                                <div class="infor">
+                                    <div class="container">
+                                        <h2><i class="fal fa-temperature-hot" id='nhietdo'></i>
+                                        </h2>
+                                        <h2><i class="fal fa-humidity" id='doam'></i></h2>
+
+                                    </div>
+                                    <div class="container">
+                                        <h2><i class="fal fa-burn" id='gas'></i></h2>
+
+                                        <h2><i class="fal fa-sun" id='light'></i></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Projects of the Month -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- End Page Content -->
+                    <!-- ============================================================== -->
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Container fluid  -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Page wrapper  -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Wrapper -->
+        <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <!-- All Jquery -->
+        <!-- ============================================================== -->
+        <script src="../assets/node_modules/jquery/jquery.min.js"></script>
+        <!-- Bootstrap popper Core JavaScript -->
+        <script src="../assets/node_modules/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <script src="js/perfect-scrollbar.jquery.min.js"></script>
+        <!--Wave Effects -->
+        <script src="js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="js/custom.min.js"></script>
+        <!-- ============================================================== -->
+        <!-- This page plugins -->
+        <!-- ============================================================== -->
+        <!--morris JavaScript -->
+        <script src="../assets/node_modules/raphael/raphael-min.js"></script>
+        <script src="../assets/node_modules/morrisjs/morris.min.js"></script>
+        <!--c3 JavaScript -->
+        <script src="../assets/node_modules/d3/d3.min.js"></script>
+        <script src="../assets/node_modules/c3-master/c3.min.js"></script>
+        <!-- Chart JS -->
+        <script src="js/dashboard1.js"></script>
+        <!-- Get Database -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+        <script src="js/control.js"></script>
+
+</body>
+
+</html>
